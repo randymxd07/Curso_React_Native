@@ -2,6 +2,8 @@
 
 //Podemos quitar el import porque con las últimas actualizaciones no es necesario tenerlo
 //import React from 'react'
+
+// Se importa el componente TiposBasicos automaticamente//
 import { TiposBasicos } from './typescript/TiposBasicos';
 
 export const App = () => {
