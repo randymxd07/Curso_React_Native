@@ -1,7 +1,10 @@
 //rafc: nos crea una estructura de nuestro componente//
 
+// Se importa el componente Login automaticamente//
+import { Login } from "./components/Login"
+
 // Se importa el componente ContadorConHook automaticamente//
-import { ContadorConHook } from "./components/ContadorConHook"
+// import { ContadorConHook } from "./components/ContadorConHook"
 
 // Se importa el componente Contador automaticamente//
 // import { Contador } from "./components/Contador";
@@ -27,19 +30,22 @@ export const App = () => {
       <hr/>
 
       {/* Importamos el componente TiposBasicos */}
-      {/* <TiposBasicos /> */}
+      {/* <TiposBasicos/> */}
 
       {/* Importamos el componente ObjetosLiterales */}
-      {/* <ObjetosLiterales /> */}
+      {/* <ObjetosLiterales/> */}
 
       {/* Importamos el componente Funciones */}
-      {/* <Funciones /> */}
+      {/* <Funciones/> */}
 
       {/* Importamos el componente Contador */}
-      {/* <Contador /> */}
+      {/* <Contador/> */}
 
-      {/* Importamos el componente Contador */}
-      <ContadorConHook />
+      {/* Importamos el componente ContadorConHook */}
+      {/* <ContadorConHook/> */}
+
+      {/* Importamos el componente Login */}
+      <Login/>
 
     </div>
   )
