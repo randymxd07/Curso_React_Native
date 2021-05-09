@@ -1,0 +1,43 @@
+{
+    "bracketPairColorizer.excludedLanguages": [
+    
+    ],
+    "bracketPairColorizer.consecutivePairColors": [
+
+        "()",
+        "[]",
+        "{}",
+        [
+            "Gold",
+            "Orchid",
+            "LightSkyBlue"
+        ],
+        "Red"
+    ],
+    "bracketPairColorizer.independentPairColors": [],
+    "bracketPairColorizer.scopeLineCSS": [
+
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}; opacity: 0.5"
+    ],
+    "emmet.excludeLanguages": [
+
+        "markdown"
+    ],
+    "eslint.codeAction.showDocumentation": {
+
+        "enable": true
+    },
+    "eslint.nodeEnv": "",
+    "eslint.nodePath": "",
+    "eslint.options": {
+    
+    },
+    "eslint.rules.customizations": [
+    
+    ],
+    "eslint.validate": [
+    
+    ]
+}
