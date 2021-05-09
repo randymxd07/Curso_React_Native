@@ -23,13 +23,32 @@ export const Usuarios = () => {
         // El .then nos da la respuesta //
         // NOTA: el status: 200 significa que se hizo correctamente, esto se ve en la consola //
         .then(resp => {
-            console.log(resp.data.data);
+            // console.log(resp.data.data);
+            setUsuarios(resp.data.data);
         })
 
         // El .catch es por si algo nos sale mal a la hora de llamar la API //
         .catch(console.log);
     
     }, [])
+
+    // Me creo una nueva función de tipo flecha para mostrar los datos del tbody //
+    const renderItem = ({id, first_name, last_name, email, avatar}: Usuario) => {
+
+        return (
+
+            // NOTA: el key tiene que ser un string para eso usamos el .toString//
+            <tr key={id.toString()}>
+                <td>
+                    <img src={avatar} alt={first_name} style={{width: 35, borderRadius: 100}} />
+                </td>
+                <td>{first_name} {last_name}</td>
+                <td>{email}</td>
+            </tr>
+        
+        )
+
+    }
 
     return (
         <>
@@ -44,9 +63,16 @@ export const Usuarios = () => {
                     </tr>
                 </thead>
                 <tbody>
-
+                    {
+                        // usuarios.map es para imprimir todo lo que tenga usuarios con la funcion renderItem//
+                        usuarios.map(renderItem)
+                    }
                 </tbody>
             </table>
+
+            <button className="btn btn-primary">
+                Siguientes
+            </button>
         
         </>
     )
