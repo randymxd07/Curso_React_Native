@@ -1,7 +1,10 @@
 //rafc: nos crea una estructura de nuestro componente//
 
+// Se importa el componente Funciones automaticamente//
+import { Funciones } from "./typescript/Funciones"
+
 // Se importa el componente ObjetosLiterales automaticamente//
-import { ObjetosLiterales } from "./typescript/ObjetosLiterales"
+// import { ObjetosLiterales } from "./typescript/ObjetosLiterales"
 
 //Podemos quitar el import porque con las últimas actualizaciones no es necesario tenerlo
 //import React from 'react'
@@ -20,7 +23,11 @@ export const App = () => {
       {/* Importamos el componente TiposBasicos */}
       {/* <TiposBasicos /> */}
 
-      <ObjetosLiterales />
+      {/* Importamos el componente ObjetosLiterales */}
+      {/* <ObjetosLiterales /> */}
+
+      {/* Importamos el componente Funciones */}
+      <Funciones />
 
     </div>
   )
