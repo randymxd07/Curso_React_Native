@@ -1,0 +1,16 @@
+Para crear una app de react con typescript usamos el siguiente comando:
+
+npx create-react-app my-app --template typescript
+
+(npx create-react-app): es para crear la app de react.
+(my-app): es el nombre de nuestra app de react.
+(--template typescript): es para que nuestra app de react la trabajemos con typescript.
+
+Una vez creamos la app de react en algun repositorio debemos iniciarla, para hacer esto debemos movernos
+a la carpeta de la app y luego debemos usar el siguiente comando:
+
+npm start
+
+(npm start): es un comando que inicia nuestra app en el navegador, nos crea un servidor local para ver los
+cambios que le vamos haciendo a nuestra app de react.
+
