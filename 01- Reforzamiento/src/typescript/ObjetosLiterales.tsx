@@ -1,7 +1,7 @@
 //rafc: nos crea una estructura de nuestro componente//
 
 //Podemos quitar el import porque con las últimas actualizaciones no es necesario tenerlo
-//import React from 'react'
+//import React from 'react';
 
 // Las interfaces sirven para ponerle reglas de validacion a sus objetos //
 

@@ -1,7 +1,7 @@
 //rafc: para crear la estructura de nuestro componente//
 
 //Quitamos el import de react//
-//import React from 'react'
+//import React from 'react';
 
 export const TiposBasicos = () => {
 
