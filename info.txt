@@ -14,3 +14,14 @@ npm start
 (npm start): es un comando que inicia nuestra app en el navegador, nos crea un servidor local para ver los
 cambios que le vamos haciendo a nuestra app de react.
 
+En este curso vamos a trabajar con yarn en vez de npm, el comando para añadir los axios con npm es el siguiente:
+
+npm i axios (NOTA: no vamos a usar este comando)
+
+Antes de usar el siguiente comando debemos instalar yarn si no lo tenemos para esto usamos el siguiente comando:
+
+npm install yarn -g
+
+asi que una vez instalado yarn usamos el siguiente comando para agregar los axios con yarn en nuestro proyecto:
+
+yarn add axios

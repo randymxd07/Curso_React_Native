@@ -1,0 +1,3 @@
+En la carpeta hooks se van a poner todos loss hooks del proyecto
+recordando que los hooks son funciones, acá se va a poner la logica
+de algunos componentes del proyecto.

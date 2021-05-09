@@ -1,0 +1,2 @@
+En la carpeta components se van a poner todos los componentes
+del proyecto, recordando que un componente es una parte del proyecto.

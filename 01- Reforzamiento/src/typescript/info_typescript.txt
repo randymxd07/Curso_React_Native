@@ -1,0 +1,2 @@
+En la carpeta typescript puse algunos ejemplos de funciones, como manejar los objetos literales y
+de los tipos basicos.

@@ -1,0 +1,5 @@
+En la carpeta api se van a poner todos los lugares, las referencias a las peticiones que se van
+a disparar despues.
+
+NOTA: El archivo llamado reqRes.tsx es el nombre de la api que estamos llamando de la página
+https://reqres.in por si quieren buscarla.
