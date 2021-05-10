@@ -1,70 +1,13 @@
-// Importamos el useEffect, useRef y el useState //
-import { useEffect, useRef, useState } from "react";
+// Importo la interface Usuario //
+import { Usuario } from '../interfaces/reqRes';
 
-// Importamos el reqResApi //
-import { reqResApi } from '../api/reqRes';
-
-// Importo la interface ReqResListado y Usuario //
-import { ReqResListado, Usuario } from '../interfaces/reqRes';
+// Importo useUsuarios //
+import { useUsuarios } from '../hooks/useUsuarios';
 
 export const Usuarios = () => {
 
-    // Hago un useState y el state lo reemplazo por usuario y initialState lo reemplazo por un array [] vacío //
-    // Le digo que el useState es de tipo Usuario[] //
-    const [usuarios, setUsuarios] = useState<Usuario[]>([]);
-
-    // Hago un useRef //
-    const paginaRef = useRef(1);
-
-    /* Cuando se ejecute este useEffect, osea cuando el componente es montado,
-    entonces aquí se va a utilizar la funcion cargarUsuarios */
-    useEffect(() => {
-
-        // Llamo la funcion cargarUsuarios //
-        cargarUsuarios();
-        
-    }, [])
-
-    // Funcion para cargar los usuarios de la API //
-    const cargarUsuarios = async() => {
-
-        // Llamado al API, entre <> despues del get le ponemos la interface ReqResListado //
-        const resp = await reqResApi.get<ReqResListado>('/users', {
-            params: {
-                /* Para mandar el valor pongo el .current, este ultimo es la referencia 
-                al valor que contiene el objeto paginaRef */
-                page: paginaRef.current
-            }
-        })
-
-        // Pregunto si resp.data.data es mayor a 0, si lo es entonces //
-        if(resp.data.data.length > 0){
-
-            // Pongo los usuarios //
-            setUsuarios(resp.data.data);
-
-            // Hago el incremento //
-            paginaRef.current ++;
-
-        // En caso de que no haya nada //
-        } else {
-
-            // Mando un mensaje //
-            alert("No hay mas registros");
-            
-        }
-
-        // El .then nos da la respuesta //
-        // NOTA: el status: 200 significa que se hizo correctamente, esto se ve en la consola //
-        // .then(resp => {
-        //     // console.log(resp.data.data);
-        //     setUsuarios(resp.data.data);
-        // })
-
-        // El .catch es por si algo nos sale mal a la hora de llamar la API //
-        // .catch(console.log);
-
-    }
+    // Voy a desestructurar lo del hook useUsuarios //
+    const {usuarios, paginaSiguiente, paginaAnterior} = useUsuarios();
 
     // Me creo una nueva función de tipo flecha para mostrar los datos del tbody //
     const renderItem = ({id, first_name, last_name, email, avatar}: Usuario) => {
@@ -104,8 +47,14 @@ export const Usuarios = () => {
                 </tbody>
             </table>
 
-            <button className="btn btn-primary" onClick={cargarUsuarios}>
-                Siguientes
+            <button className="btn btn-primary" onClick={paginaAnterior}>
+                Anterior
+            </button>
+
+            &nbsp;
+            
+            <button className="btn btn-primary" onClick={paginaSiguiente}>
+                Siguiente
             </button>
         
         </>
