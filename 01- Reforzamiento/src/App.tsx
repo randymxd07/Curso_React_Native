@@ -1,7 +1,10 @@
 //rafc: nos crea una estructura de nuestro componente//
 
+// Se importa el componente Formularios  automaticamente//
+import { Formularios } from "./components/Formularios"
+
 // Se importa el componente Usuarios automaticamente//
-import { Usuarios } from "./components/Usuarios"
+// import { Usuarios } from "./components/Usuarios"
 
 // Se importa el componente Login automaticamente//
 // import { Login } from "./components/Login"
@@ -51,7 +54,10 @@ export const App = () => {
       {/* <Login/> */}
       
       {/* Importamos el componente Usuarios */}
-      <Usuarios/>
+      {/* <Usuarios/> */}
+
+      {/* Importamos el componente Formularios */}
+      <Formularios/>
 
     </div>
   )
