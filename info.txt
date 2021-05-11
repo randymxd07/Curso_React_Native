@@ -1,3 +1,6 @@
+-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------
+
 Para crear una app de react con typescript usamos el siguiente comando:
 
 npx create-react-app my-app --template typescript
@@ -25,3 +28,72 @@ npm install yarn -g
 asi que una vez instalado yarn usamos el siguiente comando para agregar los axios con yarn en nuestro proyecto:
 
 yarn add axios
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+Para las instalaciones necesarias vamos a ir a la siguiente pagina:
+
+https://reactnative.dev/docs/environment-setup
+
+y vamos a seleccionar lo que dice React Native CLI Quickstart, seleccionamos Windows y Android
+a continuacion abrimos la powershell como administrador.
+
+instalamos Chocolatey: https://chocolatey.org
+
+por si se lo preguntan chocolatey es un gestor de paquetes como npm, yarn, etc..
+
+le damos click en install now, si no han abierto la powershell haganlo ahora y abranlo como administrador.
+
+una vez abierto usamos el siguiente comando y le damos a enter.
+
+Get-ExecutionPolicy
+
+si dice Restricted vamos a tener que usar el siguiente comando:
+
+Set-ExecutionPolicy AllSigned
+
+luego volvemos a ejecutar Get-ExecutionPolicy
+
+si en dado caso no dijera AllSigned y dijera otra cosa deben ejecutar el siguiente comando (opcional):
+
+Set-ExecutionPolicy Bypass -Scope Process
+
+Una vez terminado copiamos la siguiente linea y la pagamos en el powershell para instalar el gestor de paquetes chocolatey.
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+una vez terminada la descarga ejecutamos la siguiente linea de comandos:
+
+choco install -y nodejs.install openjdk8
+
+una vez instalado debemos abrir android studio para hacer unas configuraciones.
+
+en la app de android studio le damos click en configuracion y kle damos click en SDK Manager, seleccionamos la version de android mas
+reciente en mi caso seleccione Android 11.0 (R) que es la que está por defecto, aparte debemos seleccionar la opcion que dice
+Show Package Details, tenemos que tener seleccionada la SDK correspondiente se recomienda la 29 pero en mi caso tengo la 30, tambien
+tenemos que tener seleccionado el Intel x86 Atom_64 System Image o el Google APIs Intel x86 Atom System Image y yo tengo la segunda opcion
+en mi caso y la que diga Atom_64.
+
+una vez terminado le damos click en apply, le damos click a ok, aceptamos, le damos en next y esperamos a que se descargue y le damos click
+en finish. Ahora vamos a ir a SDK Tools que está al lado de SDK Platform y nos aseguramos de seleccionar Show Package Details, expandimos
+la que dice Android SDK Build-Tools, en mi caso selecciono la version 30.0.3 y le damos click en ok y si instalamos otra version le damos
+en apply.
+
+una vez terminado salimos y ahora nos toca configurar el ANDROID_HOME para esto debemos abrir el panel de control, vamos a las cuentas de
+usuario, volvemos y le damos a cuentas de usuario, buscamos cambiar las variables de entorno, hacemos click en nuevo, en el nombre debemos
+poner ANDROID_HOME y para el valor, vamos a abrir el explorador de Windows, vamos al disco local C, Users, tuusuario, AppData, Local,
+Android y por último Sdk, copiamos la ruta y ese es el valor que vamos a poner en la variable de entorno ANDROID_HOME, le damos click en 
+aceptar y aceptar, abrimos el powershell y ponemos el siguiente comando:
+
+Get-ChildItem -Path Env:\
+
+le damos click en enter, aqui debemos verificar si sale la que se llama ANDROID_HOME, que por lo general está arriba en el 2do puesto, con
+su respectiva ruta o valor.
+
+ahora debemos agregar el platform-tools path a las variables de entorno en el panerl de control, una vez dentro de las variables de entorno
+seleccioname la que dice path y le damos click en editar, creamos una nueva pegamos la ruta C:\Users\randy\AppData\Local\Android\Sdk que es
+la misma de ANDROID_HOME, le damos click en aceptar y luego aceptar y ya vamos a estar listos para trabajar.
+
+
+
