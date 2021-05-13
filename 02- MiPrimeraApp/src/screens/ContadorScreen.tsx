@@ -24,6 +24,9 @@ export const ContadorScreen = () => {
 
             {/* Hago un TouchableOpacity que es como un botón que le puedo aplicar styles */}
             <TouchableOpacity
+                
+                // Localizacion del TouchableOpacity //
+                style={styles.fabLocationBR}
 
                 // Cuando presione llamo la funcion setContador y hago que el contador incremente en 1//
                 onPress={() => setContador(contador + 1)}
@@ -34,11 +37,37 @@ export const ContadorScreen = () => {
                 {/* <Text>Click on me</Text> */}
 
                 {/* Podemos hacer un botón personalizado, hago una vista */}
-                <View>
+                <View style={styles.fab}>
 
                     {/* Hago un texto */}
-                    <Text style={styles.botonIncrementar}>
+                    <Text style={styles.fabText}>
                         +1
+                    </Text>
+
+                </View>
+
+            </TouchableOpacity>
+
+            {/* Hago un TouchableOpacity que es como un botón que le puedo aplicar styles */}
+            <TouchableOpacity
+                
+                // Localizacion del TouchableOpacity //
+                style={styles.fabLocationBL}
+
+                // Cuando presione llamo la funcion setContador y hago que el contador incremente en 1//
+                onPress={() => setContador(contador - 1)}
+
+            >
+
+                {/* Hago un texto */}
+                {/* <Text>Click on me</Text> */}
+
+                {/* Podemos hacer un botón personalizado, hago una vista */}
+                <View style={styles.fab}>
+
+                    {/* Hago un texto */}
+                    <Text style={styles.fabText}>
+                        -1
                     </Text>
 
                 </View>
@@ -66,6 +95,7 @@ const styles = StyleSheet.create({
 
     },
 
+    // Clase title del const styles //
     title: {
 
         // El textAlign para centrar el texto //
@@ -79,13 +109,74 @@ const styles = StyleSheet.create({
 
     },
 
-    botonIncrementar: {
+    // Clase fabLocationBR del const styles //
+    fabLocationBR: {
 
-        // Pongo el background gris //
-        backgroundColor: 'grey',
+        // La posicion va a ser absoluta //
+        position: 'absolute',
 
-        // El borderRadius es para hacer que el botón este redondeado //
+        // Basado en el padre si pongo 0 me va a poner el boton en la posición final osea abajo del todo //
+        bottom: 25,
+
+        // Me va a poner el boton al lado derecho del todo si pongo 0 //
+        right: 25,
+
+
+    },
+
+    // Clase fabLocationBL del const styles //
+    fabLocationBL: {
+
+        // La posicion va a ser absoluta //
+        position: 'absolute',
+
+        // Basado en el padre si pongo 0 me va a poner el boton en la posición final osea abajo del todo //
+        bottom: 25,
+
+        // Me va a poner el boton al lado derecho del todo si pongo 0 //
+        left: 25,
+
+
+    },
+
+    // Clase fab del const styles //
+    fab: {
+
+        // Agrego un color morado //
+        backgroundColor: '#5856D6',
+
+        // Ancho de 60 //
+        width: 60,
+
+        // Altura de 60 //
+        height: 60,
+
+        // Para hacer el borde redondo //
         borderRadius: 100,
+
+        // Justifico el contenido en el centro //
+        justifyContent: 'center',
+
+    },
+
+    // Clase fabText del const styles //
+    fabText: {
+
+        // Color de texto blanco //
+        color: 'white',
+
+        // Tamaño de las letras //
+        fontSize: 25,
+
+        // Texto en negritas //
+        fontWeight: 'bold',
+
+        // Centraliza el texto //
+        // textAlign: 'center',
+
+        // Centraliza el texto //
+        alignSelf: 'center'
+
 
     }
 
