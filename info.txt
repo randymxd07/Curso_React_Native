@@ -221,7 +221,30 @@ npx react-native run-android
 
 y esperamos a que se cargue la aplicacion y listo ahora podremos correr la app en nuestro dispositivo fisico.
 
+*******************************************************************************************************************************************
 
+para iniciar una app con un dispositivo IOS usamos el comando 
+
+npx react-native run-ios
+
+si por alguna razón nos da error a la hora de ejecutar ese comando entonces debemos hacer lo siguiente: en en proyecto hay un archivo 
+llamado podfile, vamos a entrar, debemos buscar las siguientes lineas de comando:
+
+use_flipper!()
+
+post_install do |installer|
+  react_native_post_install(installer)
+end
+
+una vez las encontremos la vamos a comentar, una vez comentada en la terminal vamos a usar el siguiente comando dentro de nuestr app:
+
+npx pod-install
+
+este comando va a leer ese archivo podfile y va a quitar todo lo que ya removí y listo ya pueden usar el comando:
+
+npx react-native run-ios
+
+*******************************************************************************************************************************************
 
 
 
