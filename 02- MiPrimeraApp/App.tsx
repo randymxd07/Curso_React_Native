@@ -3,15 +3,21 @@
 // Importamos react //
 import React from 'react';
 
+// Importo ContadorScreen //
+import { ContadorScreen } from './src/screens/ContadorScreen';
+
 // Importo HolaMundoScreen //
-import { HolaMundoScreen } from './src/screens/HolaMundoScreen';
+// import { HolaMundoScreen } from './src/screens/HolaMundoScreen';
 
 export const App = () => {
 
   return (
 
     // Muestro lo que hay en el screen HolaMundoScreen.tsx //
-    <HolaMundoScreen/>
+    // <HolaMundoScreen/>
+
+    // Muestro mi screen ContadorScreen.tsx //
+    <ContadorScreen/>
 
   )
 

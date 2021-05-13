@@ -13,7 +13,7 @@ export const HolaMundoScreen = () => {
         // Nota: para estilizar las letras o elementos de la app usamos el atributo style={} //
         <View style={{
 
-            // Tamaño de un elemanto flexible //
+            // Flex: 1, significa que el flex tome todo el tamaño posible //
             flex: 1,
     
             // Fondo del View //
