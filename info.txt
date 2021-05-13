@@ -95,5 +95,135 @@ ahora debemos agregar el platform-tools path a las variables de entorno en el pa
 seleccioname la que dice path y le damos click en editar, creamos una nueva pegamos la ruta C:\Users\randy\AppData\Local\Android\Sdk que es
 la misma de ANDROID_HOME, le damos click en aceptar y luego aceptar y ya vamos a estar listos para trabajar.
 
+Ahora nos vamos a crear un emulador virtual, primero debemos ir a adroid studio y le damos click en configuracion, luego a ADV Manager y
+pueda ser que ya haya un dispositivo creado, si queremos podemos usar ese dispositivo virtual y no tenemos que crear ninguno nuevo, en mi
+caso voy a crear uno nuevo, para eso le damos click en create virtual device, aqui aparecera una lista de dispositivos, en mi caso voy a 
+seleccionar un pixel 4 xl, le damos click en next, seleccionamos la version de android en mi caso usare la version R con la version de 
+Android 11.0, ustedes pueden descargar la que quieran, le damos click en next, le van a poner un nombre, en mi caso lo dejare asi como 
+esta, en la parte que dice emulated performance, en graphics quitamos automatico y ponemos por hardware, en el apartado de show advanced
+settings podemos ponerle mas RAM, en mi caso le puse 4GB de RAM, una vez terminemos le damos click en finish y listo ya nos habrá creado
+el emulador, para ponerlo en accion le damos click en el icono de play, si nos pide que instalemos HAXM lo hacemos, si nos da problemas
+les dejare un link a un video para que lo instalen manualmente:
+
+https://www.youtube.com/watch?v=aVLFMqIHccQ
+
+una vez instalado el HAXM solo tienen que ir a android studio, configuracion, AVD Manager y le dan al icono de play del dispositivo
+virtual que ustedes crearon, ahi les va a iniciar, ahora debemos copiar el siguiente comando:
+
+npx react-native init AwesomeTSProject --template react-native-template-typescript
+
+para que nos cree el proyecto de React Native con TypeScript, en dado caso de que queramos el proyecto normal de React Native con 
+Javascript debemos usar el siguiente comando:
+
+npx react-native init AwesomeProject
+
+una vez copiamos el comando que vayamos a usar abrimos el powershell (no tiene que ser administrador), en mi caso usare el comando de 
+arriba porque voy a usar React Native con TypeScript, cuando peguemos el comando y le demos en anter debemos decirle que si para que la
+instalacion pueda seguir.
+
+una vez se crea la carpeta podemos abrir visual studio code, y arrastramos la carpeta de React Native que se creo cuando usamos el comando
+que en mi caso se llama AwesomeTSProject.
+
+para echar a andar la aplicacion debemos hacer lo siguiente: abrimos la powershell (no tiene que ser administrador), una vez abierta
+debemos localizarnos en la carpeta de nuestro proyecto AwesomeProject y ahora debemos usar el siguiente comando para iniciar la app:
+
+npx react-native run-android
+
+este comando en dado caso que no tengamos el emulador abierto nos lo va a abrir, nos va a preguntar que si queremos darle permiso a node
+o a metro, en dado caso le deben dar permiso, metro es un webpack para la aplicacion de react, la primera vez que se ejecuta puede tardar
+un tiempo, esto depende de la velocidad del procesador, de la computadora en general.
+
+una vez acaba la carga nos abrira una especia de app en el emulador (NOTA: no cerrar el powershell, si lo cierras vas a tener que ejecutar
+de nuevo el comando npx react-native run-android), un comando util en metro es presionar la tecla R para refrescar la app esto sirve para
+que todos los ultimos cambios y actualizar el estado de la aplicacion.
+
+si quisieras cambiar algo de la app entonces tendría que hacerse en visual studio code, justamente en el App.tsx, en mi caso lo abrire y
+borraré todo lo que hay escrito y uso el snippet rafc para crear la estructura y ahí ponemos todo nuestro codigo.
+
+para arreglar el error por si no se ve nuestra app debemos ir al archivo index.js y poner entre {} la importacion de App 
+
+import App from './App';
+
+ahora se verá así:
+
+import {App} from './App';
+
+el error pasa porque en el index.js se esta buscando el App como la exportacion como defecto y lo estamos haciendo como una exportacion 
+con nombre, si hacemos esto y guardamos los cambios y vamos al emulador veremos que ya nos sale el contenido de nuestra app.
+
+si queremos dejarlo como estaba entonces solo tenemos que exportar el app por defecto en el archivo App.tsx ejemplo:
+
+asi se ve antes de cambiarlo:
+
+// Importamos React //
+import React from 'react';
+
+// Importamos View, Text de React Native //
+import { Text, View } from 'react-native';
+
+export const App = () => {
+  return (
+
+    // En React Native no se usa el div pero si se usa el View //
+    <View>
+      
+      {/* Text es para poner texto en nuestra aplicación */}
+      <Text>Hola Mundo</Text>
+
+    </View>
+
+  )
+}
+
+despues de cambiarlo se veria asi:
+
+// Importamos React //
+import React from 'react';
+
+// Importamos View, Text de React Native //
+import { Text, View } from 'react-native';
+
+const App = () => {
+  return (
+
+    // En React Native no se usa el div pero si se usa el View //
+    <View>
+      
+      {/* Text es para poner texto en nuestra aplicación */}
+      <Text>Hola Mundo</Text>
+
+    </View>
+
+  )
+}
+
+export default App;
+
+para hacer pruebas en nuestro dispositivo android físico y no en el emulador debemos activar el USB Debugging, esto es obligatorio si
+queremos hacer pruebas fisicamente conectado por USB a nuestro teléfono, esta opcion la activamos en las opciones de developer de nuestro
+telefono, en mi caso tengo un Samsung Galaxy S8 para activar estas opciones tengo que ir a ajustes, Acerca del teléfono, Información del
+software y en la opcion que dice Número de compilación presionar varias veces hasta que aparezca en pantalla que se habilitaron las
+Opciones de desarrollador, vamos allá y activamos el USB Debugging o Depuración por USB en español.
+
+Conectamos el celular con un USB al PC, abrimos la powershell en nuestra pc (no tiene que ser administrador) pero antes de ingresar los
+comandos para correr la app en nuestro dispositivo fisico tenemos que hacer unas configuraciones, vamos al panel de control, cuentas de
+usuario, cuentas de usuario, cambiar variables de entorno, ahí podríamos ver el ANDROID_HOME, copiamos el url o valor de ANDROID_HOME,
+ahora seleccionamos el path y editamos, en el explorador de archivos de windows pegamos la url y tenemos que dirigirnos a platform-tools
+copiamos ese path osea C:\Users\randy\AppData\Local\Android\Sdk\platform-tools este y ahora en las variables de entorno le damos en nuevo
+y pegamos ese path que copiamos, aceptar y aceptar, ahora si, en el powershell vamos a poner el siguiente comando:
+
+adb devices
+
+una vez le demos a enter nos va a enseñar el dispositivo físico que tenemos conectado, entonces debemos movernos a la carpeta de la app
+abrimos android studio y iniciamos el emulador y ejecutamos en la terminal.
+
+npx react-native run-android 
+
+y esperamos a que se cargue la aplicacion y listo ahora podremos correr la app en nuestro dispositivo fisico.
+
+
+
+
+
 
 
