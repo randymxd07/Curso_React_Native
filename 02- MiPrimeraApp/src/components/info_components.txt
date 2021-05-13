@@ -1,0 +1,1 @@
+La carpeta components se va a usar para hacer componentes pequeños como por ejemplo botones.

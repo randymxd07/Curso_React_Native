@@ -1,0 +1,1 @@
+La carpeta screens se va a usar para hacer componentes que abarcan toda la pantalla.
