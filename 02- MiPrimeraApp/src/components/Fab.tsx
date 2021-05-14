@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, StyleSheet, TouchableNativeFeedback } from 'react-native';
+import { Text, View, StyleSheet, TouchableNativeFeedback, Platform, TouchableOpacity } from 'react-native';
 
 // Hago una interface //
 interface Props {
@@ -18,40 +18,36 @@ interface Props {
 // Los props van a ser de tipo Props, desestructuro el title, onPress de mis props //
 export const Fab = ({title, onPress, position = "br"}: Props) => {
 
-    return (
+    // Creo una función de tipo flecha llamada ios //
+    const ios = () => {
 
-        // Hago un View y muevo mi TouchableNativeFeedback dentro de este //
-        <View
-            // Localizacion del TouchableNativeFeedback //
-            style={[ // Puedo mandarlo como un array //
+        return (
 
-                // Si la posicion es exactamente igual al bl, entonces //
-                // (position === 'bl')
-                //     ? styles.fabLocationBL // Pongo los estilos del bl, caso contrario //
-                //     : styles.fabLocationBR // Pongo los estilos del br //
+            // Hago un View y muevo mi TouchableNativeFeedback dentro de este //
+            <TouchableOpacity
 
-                // Le pongo la posición //
-                styles.fabLocation,
-
-                // Le digo que si la posicion es exactamente igual a bl que aplicque styles.left, caso contrario que aplique styles.right //
-                (position === 'bl') ? styles.left : styles.right
-
-            ]}
-        >
-
-            {/* Hago un TouchableNativeFeedback que es como un botón que le puedo aplicar styles */}
-            <TouchableNativeFeedback
-                        
-                // Cuando presione llamo la prop onPress y hago que el contador incremente en 1 //
+                // Cuando presione llamo la prop onPress y hago que el contador incremente o decremente en 1 //
                 onPress={onPress}
 
-                // Ponemos un background //
-                background={TouchableNativeFeedback.Ripple('#28425B', false, 30)}
+                // Puedo ponerle un opacity entre 0 y 1 //
+                activeOpacity={0.75}
 
+                // Localizacion del TouchableNativeFeedback //
+                style={[ // Puedo mandarlo como un array //
+
+                    // Si la posicion es exactamente igual al bl, entonces //
+                    // (position === 'bl')
+                    //     ? styles.fabLocationBL // Pongo los estilos del bl, caso contrario //
+                    //     : styles.fabLocationBR // Pongo los estilos del br //
+
+                    // Le pongo la posición //
+                    styles.fabLocation,
+
+                    // Le digo que si la posicion es exactamente igual a bl que aplicque styles.left, caso contrario que aplique styles.right //
+                    (position === 'bl') ? styles.left : styles.right
+
+                ]}
             >
-
-                {/* Hago un texto */}
-                {/* <Text>Click on me</Text> */}
 
                 {/* Podemos hacer un botón personalizado, hago una vista */}
                 <View style={styles.fab}>
@@ -63,11 +59,70 @@ export const Fab = ({title, onPress, position = "br"}: Props) => {
 
                 </View>
 
-            </TouchableNativeFeedback>
+            </TouchableOpacity>
 
-        </View>
-        
-    )
+        )
+
+    }
+
+    // Creo una función de tipo flecha llamada android //
+    const android = () => {
+
+        return (
+
+            // Hago un View y muevo mi TouchableNativeFeedback dentro de este //
+            <View
+                // Localizacion del TouchableNativeFeedback //
+                style={[ // Puedo mandarlo como un array //
+
+                    // Si la posicion es exactamente igual al bl, entonces //
+                    // (position === 'bl')
+                    //     ? styles.fabLocationBL // Pongo los estilos del bl, caso contrario //
+                    //     : styles.fabLocationBR // Pongo los estilos del br //
+
+                    // Le pongo la posición //
+                    styles.fabLocation,
+
+                    // Le digo que si la posicion es exactamente igual a bl que aplicque styles.left, caso contrario que aplique styles.right //
+                    (position === 'bl') ? styles.left : styles.right
+
+                ]}
+            >
+
+                {/* Hago un TouchableNativeFeedback que es como un botón que le puedo aplicar styles */}
+                <TouchableNativeFeedback
+                            
+                    // Cuando presione llamo la prop onPress y hago que el contador incremente o decremente en 1 //
+                    onPress={onPress}
+
+                    // Ponemos un background //
+                    background={TouchableNativeFeedback.Ripple('#28425B', false, 30)}
+
+                >
+
+                    {/* Hago un texto */}
+                    {/* <Text>Click on me</Text> */}
+
+                    {/* Podemos hacer un botón personalizado, hago una vista */}
+                    <View style={styles.fab}>
+
+                        {/* Hago un texto */}
+                        <Text style={styles.fabText}>
+                            {title}
+                        </Text>
+
+                    </View>
+
+                </TouchableNativeFeedback>
+
+            </View>
+            
+        )
+
+    }
+
+    // Si la plataforma es exactamente igual a ios retorno el JSX que retorna la funcion ios, caso contrario retorna la funcion android //
+    return (Platform.OS === 'ios') ? ios() : android()
 
 }
 
