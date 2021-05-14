@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TouchableNativeFeedback } from 'react-native';
 
 // Hago una interface //
 interface Props {
@@ -19,11 +19,10 @@ interface Props {
 export const Fab = ({title, onPress, position = "br"}: Props) => {
 
     return (
-        
-        // Hago un TouchableOpacity que es como un botón que le puedo aplicar styles */
-        <TouchableOpacity
-                    
-            // Localizacion del TouchableOpacity //
+
+        // Hago un View y muevo mi TouchableNativeFeedback dentro de este //
+        <View
+            // Localizacion del TouchableNativeFeedback //
             style={[ // Puedo mandarlo como un array //
 
                 // Si la posicion es exactamente igual al bl, entonces //
@@ -38,27 +37,36 @@ export const Fab = ({title, onPress, position = "br"}: Props) => {
                 (position === 'bl') ? styles.left : styles.right
 
             ]}
-
-            // Cuando presione llamo la prop onPress y hago que el contador incremente en 1 //
-            onPress={onPress}
-
         >
 
-            {/* Hago un texto */}
-            {/* <Text>Click on me</Text> */}
+            {/* Hago un TouchableNativeFeedback que es como un botón que le puedo aplicar styles */}
+            <TouchableNativeFeedback
+                        
+                // Cuando presione llamo la prop onPress y hago que el contador incremente en 1 //
+                onPress={onPress}
 
-            {/* Podemos hacer un botón personalizado, hago una vista */}
-            <View style={styles.fab}>
+                // Ponemos un background //
+                background={TouchableNativeFeedback.Ripple('#28425B', false, 30)}
+
+            >
 
                 {/* Hago un texto */}
-                <Text style={styles.fabText}>
-                    {title}
-                </Text>
+                {/* <Text>Click on me</Text> */}
 
-            </View>
+                {/* Podemos hacer un botón personalizado, hago una vista */}
+                <View style={styles.fab}>
 
-        </TouchableOpacity>
+                    {/* Hago un texto */}
+                    <Text style={styles.fabText}>
+                        {title}
+                    </Text>
 
+                </View>
+
+            </TouchableNativeFeedback>
+
+        </View>
+        
     )
 
 }
