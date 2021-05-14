@@ -1,5 +1,4 @@
--------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------
+*******************************************************************************************************************************************
 
 Para crear una app de react con typescript usamos el siguiente comando:
 
@@ -29,8 +28,7 @@ asi que una vez instalado yarn usamos el siguiente comando para agregar los axio
 
 yarn add axios
 
--------------------------------------------------------------------------------------------------------------------------------------------
--------------------------------------------------------------------------------------------------------------------------------------------
+*******************************************************************************************************************************************
 
 Para las instalaciones necesarias vamos a ir a la siguiente pagina:
 
@@ -246,7 +244,66 @@ npx react-native run-ios
 
 *******************************************************************************************************************************************
 
+los fundamentos del diseño de react son:
 
+Box Object Model: alto, ancho, margen, padding, borde.
 
+Position: absoluta, relativa, top, left, right, bottom.
+
+Flex Box: direccion, ubicacion, alineamiento, estirar, encoger, proporciones.
+
+*******************************************************************************************************************************************
+
+propiedades del margin:
+
+margin: aplica margen a los 4 lados.
+
+marginLeft: margen a la izquierda.
+
+marginRight: margen a la derecha.
+
+marginBotton: margen abajo.
+
+marginTop: margen arriba.
+
+marginVertical: aplica mismo margen arriba y abajo.
+
+marginHorizontal: mismo margen a la izquierda y derecha.
+
+*******************************************************************************************************************************************
+
+propiedades del padding:
+
+padding: aplica padding a los 4 lados.
+
+paddingLeft: padding a la izquierda.
+
+paddingRight: padding a la derecha.
+
+paddingBotton: padding abajo.
+
+paddingTop: padding arriba.
+
+paddingVertical: aplica mismo padding arriba y abajo.
+
+paddingHorizontal: mismo padding a la izquierda y derecha.
+
+*******************************************************************************************************************************************
+
+propiedades del border:
+
+borderWidth: aplica borde a los 4 lados.
+
+borderLeftWith: borde a la izquierda.
+
+borderRightWith: borde a la derecha.
+
+borderBottomWith: borde abajo.
+
+borderTopWith: borde arriba.
+
+borderColor: aplica un color al borde.
+
+*******************************************************************************************************************************************
 
 

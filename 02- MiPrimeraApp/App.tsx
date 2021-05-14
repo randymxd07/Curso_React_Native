@@ -2,9 +2,13 @@
 
 // Importamos react //
 import React from 'react';
+import { SafeAreaView } from 'react-native';
+
+// Importo BoxObjectModelScreen //
+import { BoxObjectModelScreen } from './src/screens/BoxObjectModelScreen';
 
 // Importo ContadorScreen //
-import { ContadorScreen } from './src/screens/ContadorScreen';
+// import { ContadorScreen } from './src/screens/ContadorScreen';
 
 // Importo HolaMundoScreen //
 // import { HolaMundoScreen } from './src/screens/HolaMundoScreen';
@@ -13,12 +17,20 @@ export const App = () => {
 
   return (
 
-    // Muestro lo que hay en el screen HolaMundoScreen.tsx //
-    // <HolaMundoScreen/>
+    // El SafeAreaView sirve para mostrar el contenido bien en los dispositivos de IOS en caso de que tengan notch //
+    <SafeAreaView>
 
-    // Muestro mi screen ContadorScreen.tsx //
-    <ContadorScreen/>
+      {/* Muestro lo que hay en el screen HolaMundoScreen */}
+      {/* <HolaMundoScreen/> */}
 
+      {/* Muestro mi screen ContadorScreen */}
+      {/* <ContadorScreen/> */}
+
+      {/* Muestro mi screen BoxObjectModelScreen */}
+      <BoxObjectModelScreen/>
+
+    </SafeAreaView>
+    
   )
 
 }
