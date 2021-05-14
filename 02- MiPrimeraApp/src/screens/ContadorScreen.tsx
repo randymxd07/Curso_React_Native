@@ -1,8 +1,11 @@
 // Importo react, useState //
 import React, { useState } from 'react';
 
-// Importo View, Text, TouchableOpacity, StyleSheet //
-import { Text, TouchableOpacity, View, StyleSheet } from 'react-native';
+// Importo View, Text, StyleSheet //
+import { Text, View, StyleSheet } from 'react-native';
+
+// Importo el componente Fab //
+import { Fab } from '../components/Fab';
 
 export const ContadorScreen = () => {
 
@@ -21,58 +24,33 @@ export const ContadorScreen = () => {
                 Contador: {contador}
 
             </Text>
-
-            {/* Hago un TouchableOpacity que es como un botón que le puedo aplicar styles */}
-            <TouchableOpacity
-                
-                // Localizacion del TouchableOpacity //
-                style={styles.fabLocationBR}
-
-                // Cuando presione llamo la funcion setContador y hago que el contador incremente en 1//
+            
+            {/* Muestro el componente Fab, puedo personalizar mi componente, le mando un title y una funcion */}
+            {/* NOTA: Fab significa Floating Action Button */}
+            <Fab
+                title="+1"
+                position="br"
                 onPress={() => setContador(contador + 1)}
-
-            >
-
-                {/* Hago un texto */}
-                {/* <Text>Click on me</Text> */}
-
-                {/* Podemos hacer un botón personalizado, hago una vista */}
-                <View style={styles.fab}>
-
-                    {/* Hago un texto */}
-                    <Text style={styles.fabText}>
-                        +1
-                    </Text>
-
-                </View>
-
-            </TouchableOpacity>
-
-            {/* Hago un TouchableOpacity que es como un botón que le puedo aplicar styles */}
-            <TouchableOpacity
-                
-                // Localizacion del TouchableOpacity //
-                style={styles.fabLocationBL}
-
-                // Cuando presione llamo la funcion setContador y hago que el contador incremente en 1//
+            />
+            
+            <Fab
+                title="-1"
+                position="bl"
                 onPress={() => setContador(contador - 1)}
+            />
 
+            {/* <TouchableOpacity
+                style={styles.fabLocationBL}
+                onPress={() => setContador(contador - 1)}
             >
 
-                {/* Hago un texto */}
-                {/* <Text>Click on me</Text> */}
-
-                {/* Podemos hacer un botón personalizado, hago una vista */}
                 <View style={styles.fab}>
-
-                    {/* Hago un texto */}
                     <Text style={styles.fabText}>
                         -1
                     </Text>
-
                 </View>
 
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
         </View>
 
@@ -108,76 +86,5 @@ const styles = StyleSheet.create({
         top: -15,
 
     },
-
-    // Clase fabLocationBR del const styles //
-    fabLocationBR: {
-
-        // La posicion va a ser absoluta //
-        position: 'absolute',
-
-        // Basado en el padre si pongo 0 me va a poner el boton en la posición final osea abajo del todo //
-        bottom: 25,
-
-        // Me va a poner el boton al lado derecho del todo si pongo 0 //
-        right: 25,
-
-
-    },
-
-    // Clase fabLocationBL del const styles //
-    fabLocationBL: {
-
-        // La posicion va a ser absoluta //
-        position: 'absolute',
-
-        // Basado en el padre si pongo 0 me va a poner el boton en la posición final osea abajo del todo //
-        bottom: 25,
-
-        // Me va a poner el boton al lado derecho del todo si pongo 0 //
-        left: 25,
-
-
-    },
-
-    // Clase fab del const styles //
-    fab: {
-
-        // Agrego un color morado //
-        backgroundColor: '#5856D6',
-
-        // Ancho de 60 //
-        width: 60,
-
-        // Altura de 60 //
-        height: 60,
-
-        // Para hacer el borde redondo //
-        borderRadius: 100,
-
-        // Justifico el contenido en el centro //
-        justifyContent: 'center',
-
-    },
-
-    // Clase fabText del const styles //
-    fabText: {
-
-        // Color de texto blanco //
-        color: 'white',
-
-        // Tamaño de las letras //
-        fontSize: 25,
-
-        // Texto en negritas //
-        fontWeight: 'bold',
-
-        // Centraliza el texto //
-        // textAlign: 'center',
-
-        // Centraliza el texto //
-        alignSelf: 'center'
-
-
-    }
 
 })
