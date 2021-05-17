@@ -6,8 +6,11 @@ import React from 'react';
 // Importo SafeAreaView //
 import { SafeAreaView } from 'react-native';
 
+// Importo PositionScreen //
+import { PositionScreen } from './src/screens/PositionScreen';
+
 // Importo DimensionesScreen //
-import { DimensionesScreen } from './src/screens/DimensionesScreen';
+// import { DimensionesScreen } from './src/screens/DimensionesScreen';
 
 // Importo BoxObjectModelScreen //
 // import { BoxObjectModelScreen } from './src/screens/BoxObjectModelScreen';
@@ -34,7 +37,11 @@ export const App = () => {
       {/* Muestro mi screen BoxObjectModelScreen */}
       {/* <BoxObjectModelScreen/> */}
 
-      <DimensionesScreen/>
+      {/* Muestro mi screen DimensionesScreen */}
+      {/* <DimensionesScreen/> */}
+
+      {/* Muestro mi screen PositionScreen */}
+      <PositionScreen/>
 
     </SafeAreaView>
     
