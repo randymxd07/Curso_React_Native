@@ -306,4 +306,12 @@ borderColor: aplica un color al borde.
 
 *******************************************************************************************************************************************
 
+para agregar un snippet debemos ir a Visual Studio Code y darle en View, Command palette, escribimos Configure User Snippets, buscamos
+typescriptreact.json podemos ir a la siguiente pagina para copiar un snippet para agregar un stylesheet: 
 
+https://gist.githubusercontent.com/Klerith/ed5675a477d08ade69f23eaafd75a6d1/raw/e797d2c513e536aae395f23e6ee71afa501ef513/typescriptreact.json
+
+copiamos y reemplazamos por todo lo que esta en el archivo typescriptreact.json, entonces ahora podemos usar el snippet stles, que nos
+crea un stylesheet rapido.
+
+*******************************************************************************************************************************************
