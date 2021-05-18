@@ -6,8 +6,11 @@ import React from 'react';
 // Importo SafeAreaView //
 import { SafeAreaView } from 'react-native';
 
+// Importo FlexScreen //
+import { FlexScreen } from './src/screens/FlexScreen';
+
 // Importo PositionScreen //
-import { PositionScreen } from './src/screens/PositionScreen';
+// import { PositionScreen } from './src/screens/PositionScreen';
 
 // Importo DimensionesScreen //
 // import { DimensionesScreen } from './src/screens/DimensionesScreen';
@@ -41,7 +44,10 @@ export const App = () => {
       {/* <DimensionesScreen/> */}
 
       {/* Muestro mi screen PositionScreen */}
-      <PositionScreen/>
+      {/* <PositionScreen/> */}
+
+      {/* Muestro mi screen FlexScreen */}
+      <FlexScreen/>
 
     </SafeAreaView>
     
