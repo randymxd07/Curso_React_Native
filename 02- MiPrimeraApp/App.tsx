@@ -6,8 +6,11 @@ import React from 'react';
 // Importo SafeAreaView //
 import { SafeAreaView } from 'react-native';
 
+// Importo TareaScreen //
+import { TareaScreen } from './src/screens/TareaScreen';
+
 // Importo FlexScreen //
-import { FlexScreen } from './src/screens/FlexScreen';
+// import { FlexScreen } from './src/screens/FlexScreen';
 
 // Importo PositionScreen //
 // import { PositionScreen } from './src/screens/PositionScreen';
@@ -29,7 +32,10 @@ export const App = () => {
   return (
 
     // El SafeAreaView sirve para mostrar el contenido bien en los dispositivos de IOS en caso de que tengan notch //
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={{
+      flex: 1,
+      backgroundColor: '#28425B', // Esto es para que en IOS no se vea una parte blanca //
+    }}>
 
       {/* Muestro lo que hay en el screen HolaMundoScreen */}
       {/* <HolaMundoScreen/> */}
@@ -47,7 +53,10 @@ export const App = () => {
       {/* <PositionScreen/> */}
 
       {/* Muestro mi screen FlexScreen */}
-      <FlexScreen/>
+      {/* <FlexScreen/> */}
+
+      {/* Muestro mi screen TareaScreen */}
+      <TareaScreen/>
 
     </SafeAreaView>
     
