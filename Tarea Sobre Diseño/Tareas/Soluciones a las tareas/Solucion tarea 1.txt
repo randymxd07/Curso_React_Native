@@ -1,0 +1,34 @@
+Basicamente para resolver la tarea 1 nos ubicamos en la caja naranja y quitamos el height y ponemos flex: 1
+esto va a hacer que la caja naranja se expanda hasta el maximo.
+
+container: {
+     flex: 1,
+     backgroundColor: '#28425B',
+     justifyContent: 'center'
+},
+
+cajaMorada: {
+     width: 100,
+     height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#5856D6',
+},
+
+cajaNaranja: {
+     width: 100,
+     // height: 100,
+     flex: 1,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#F0A23B',
+},
+
+cajaAzul: {
+     width: 100,
+     height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#28C4D9',
+},
+

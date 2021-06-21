@@ -1,0 +1,34 @@
+Para solucionar la tarea 2 solo tenemos que ir a la propiedad container y poner justifyContent: 'center' y luego en el hijo osea en la 
+caja azul solo tengo que quitar el width y automaticamente tomará todo el espacio, también pudimos ponerle width: '100%' a la caja azul
+y nos hubiese dado el mismo resultado.
+
+container: {
+     flex: 1,
+     backgroundColor: '#28425B',
+     justifyContent: 'center'
+},
+
+cajaMorada: {
+     width: 100,
+     height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#5856D6',
+},
+
+cajaNaranja: {
+     width: 100,
+     height: 100,
+     // flex: 1,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#F0A23B',
+},
+
+cajaAzul: {
+     // width: 100,
+     height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#28C4D9',
+},

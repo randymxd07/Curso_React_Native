@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
         // left: 0,
         // top: 0,
         // right: 0,
-        ...StyleSheet.absoluteFillObject, //Hace lo mismo que lo qeu esta arriba comentado //
+        ...StyleSheet.absoluteFillObject, //Hace lo mismo que lo que esta arriba comentado //
     },
 
 });

@@ -24,30 +24,43 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#28425B',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
     },
 
     cajaMorada: {
+        // flex: 2,
         width: 100,
         height: 100,
         borderWidth: 10,
         borderColor: 'white',
         backgroundColor: '#5856D6',
+        // alignSelf: 'flex-end',
+        // top: 100,
     },
 
     cajaNaranja: {
+        // flex: 2,
         width: 100,
         height: 100,
+        // flex: 1,
         borderWidth: 10,
         borderColor: 'white',
         backgroundColor: '#F0A23B',
+        // alignSelf: 'center',
+        // left: 100,
+        top: 50,
     },
 
     cajaAzul: {
+        // flex: 4,
         width: 100,
         height: 100,
         borderWidth: 10,
         borderColor: 'white',
         backgroundColor: '#28C4D9',
+        // alignSelf: 'flex-start',
     },
 
 });

@@ -1,0 +1,40 @@
+Para este problema quitamos el flexDirection y quitarles la propiedad width y en las cajas ponemos las propiedades flex, en la morada
+debemos poner flex: 2, en la naranja ponemos flex: 2 y en la azul ponemos flex: 4.
+
+container: {
+     flex: 1,
+     backgroundColor: '#28425B',
+     // flexDirection: 'row',
+     justifyContent: 'space-between',
+},
+
+cajaMorada: {
+     flex: 2,
+     // width: 100,
+     // height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#5856D6',
+     // alignSelf: 'flex-end',
+},
+
+cajaNaranja: {
+     flex: 2,
+     // width: 100,
+     // height: 100,
+     // flex: 1,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#F0A23B',
+     // alignSelf: 'center',
+},
+
+cajaAzul: {
+     flex: 4,
+     // width: 100,
+     // height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#28C4D9',
+     // alignSelf: 'flex-start',
+},

@@ -1,0 +1,37 @@
+Para solucionar la tarea 5 solo debemos poner en la propiedad container un flexDirection: 'row' con el justifyContent: 'space-between'
+quitamos los alignSelf a las cajas y luego quitamos el height a cada uno.
+
+container: {
+     flex: 1,
+     backgroundColor: '#28425B',
+     flexDirection: 'row',
+     justifyContent: 'space-between',
+},
+
+cajaMorada: {
+     width: 100,
+     // height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#5856D6',
+     // alignSelf: 'flex-end',
+},
+
+cajaNaranja: {
+     width: 100,
+     // height: 100,
+     // flex: 1,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#F0A23B',
+     // alignSelf: 'center',
+},
+
+    cajaAzul: {
+        width: 100,
+        // height: 100,
+        borderWidth: 10,
+        borderColor: 'white',
+        backgroundColor: '#28C4D9',
+        // alignSelf: 'flex-start',
+    },

@@ -1,0 +1,36 @@
+Para solucionar la tarea 4 en la propiedad container le pongo justifyContent: 'space-between' en la caja naranja pongo alignSelf: 'center'
+y en la caja azul pongo alignSelf: 'flex-start'
+
+container: {
+     flex: 1,
+     backgroundColor: '#28425B',
+     justifyContent: 'space-between',
+},
+
+cajaMorada: {
+     width: 100,
+     height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#5856D6',
+     alignSelf: 'flex-end',
+},
+
+cajaNaranja: {
+     width: 100,
+     height: 100,
+     // flex: 1,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#F0A23B',
+     alignSelf: 'center',
+},
+
+cajaAzul: {
+     width: 100,
+     height: 100,
+     borderWidth: 10,
+     borderColor: 'white',
+     backgroundColor: '#28C4D9',
+     alignSelf: 'flex-start',
+},
