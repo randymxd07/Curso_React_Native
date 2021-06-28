@@ -315,3 +315,17 @@ copiamos y reemplazamos por todo lo que esta en el archivo typescriptreact.json,
 crea un stylesheet rapido.
 
 *******************************************************************************************************************************************
+
+Si por alguna razon me da un error al tratar de crear una app de react native entonces debo usar el siguiente comando en la cmd
+un error como el siguiente: https://github.com/react-native-community/react-native-template-typescript/issues/72
+
+npm uninstall -g react-native-cli
+
+npm i -g @react-native-community/cli
+
+luego si podemos ejecutar nuestro comando:
+
+npx react-native init MyApp --template react-native-template-typescript
+
+*******************************************************************************************************************************************
+

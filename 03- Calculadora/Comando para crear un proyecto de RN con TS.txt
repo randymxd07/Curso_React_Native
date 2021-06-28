@@ -1,0 +1,1 @@
+npx react-native init AwesomeTSProject --template react-native-template-typescript
