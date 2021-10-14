@@ -1,11 +1,21 @@
 import React from 'react'
-import {View, Text} from 'react-native';
+import {SafeAreaView, StatusBar} from 'react-native';
+import { CalculadoraScreen } from './src/screens/CalculadoraScreen';
+import { styles } from './src/theme/AppTheme';
 
 export const App = () => {
   return (
-    <View>
-        <Text>Calculadora</Text>
-    </View>
+    // Para el notch del IPhone //
+    <SafeAreaView style = {styles.fondo}>
+
+        <StatusBar 
+          backgroundColor = 'black'
+          barStyle = 'dark-content'
+        />
+
+        <CalculadoraScreen/>
+        
+    </SafeAreaView>
   )
 }
 
