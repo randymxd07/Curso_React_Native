@@ -1,1 +1,1 @@
-En la carpeta src la vamos a usar para poner los componentes.
+En la carpeta src la vamos a usar para poner los componentes, screens y más cosas.
